@@ -2,15 +2,13 @@ import React, { useState } from "react";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import "./App.css";
-import Hero from "./components/Hero/Hero";
-import CategoriesSection from "./components/LandingPageCategoriesSection/CategoriesSection";
+import LandingPage from "./Pages/LandingPage";
 
 const App = () => {
   const [users, setUsers] = useState();
   return (
     <>
-      <Hero />
-      <CategoriesSection/>
+      <LandingPage />
       {/* {users ? (
         <div>welcome to the UI dashboard</div>
       ) : (
