@@ -12,6 +12,7 @@ const SignIn = (props) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         props.setUsers(userCredential);
+        console.log("userCredentials", userCredential?.user?.email);
       })
       .catch((error) => {
         console.log(error);

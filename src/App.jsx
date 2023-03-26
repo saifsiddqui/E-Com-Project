@@ -8,15 +8,15 @@ const App = () => {
   const [users, setUsers] = useState();
   return (
     <>
-      <LandingPage />
-      {/* {users ? (
+      {/* <LandingPage /> */}
+      {users ? (
         <div>welcome to the UI dashboard</div>
       ) : (
         <>
           <SignIn setUsers={setUsers} />
           <SignUp />
         </>
-      )} */}
+      )}
     </>
   );
 };
