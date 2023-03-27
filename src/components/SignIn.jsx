@@ -1,16 +1,23 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { auth } from ".././firebase";
+import { currentUserEmail } from "../slices/userSlice";
 
 const SignIn = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+
+  console.log("currentUserEmail", currentUserEmail);
+  console.log("dispatch", dispatch(currentUserEmail));
   //   const [users, setUsers] = useState();
 
   const signIn = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        dispatch(currentUserEmail(userCredential?.user?.email));
         props.setUsers(userCredential);
         console.log("userCredentials", userCredential?.user?.email);
       })
