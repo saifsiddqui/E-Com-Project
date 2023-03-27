@@ -10,15 +10,15 @@ const App = () => {
   const email = useSelector((state) => state.user.userEmail);
   return (
     <>
-      {/* <LandingPage /> */}
-      {users ? (
+      <LandingPage />
+      {/* {users ? (
         <div>welcome to the UI dashboard {email}</div>
       ) : (
         <>
           <SignIn setUsers={setUsers} />
           <SignUp />
         </>
-      )}
+      )} */}
     </>
   );
 };
